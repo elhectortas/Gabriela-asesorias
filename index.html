@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lic. Gabriela Ángeles | Gestoría Administrativa, Fiscal y Legal en México</title>
+  <meta name="description" content="Gestoría administrativa, fiscal y legal en México. Trámites ante el SAT, permisos, licencias, trámites notariales y asesoría jurídica. Atención personalizada y por WhatsApp.">
+  <meta name="theme-color" content="#0B1F3A">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --navy-2: #12305A;
+      --gold: #C9A24B;
+      --gold-dark: #A9822F;
+      --light: #F6F7FA;
+      --white: #FFFFFF;
+      --text: #1F2937;
+      --muted: #5B6575;
+      --border: #E3E7EE;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #1DA851;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(11, 31, 58, 0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 64px 0; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    .section-head h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); margin-bottom: 12px; }
+    .section-head p { color: var(--muted); font-size: 1.02rem; }
+
+    .divider {
+      width: 56px; height: 3px; background: var(--gold);
+      margin: 14px auto 0; border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+    .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 8px 20px rgba(201,162,75,.35); }
+    .btn-gold:hover { background: #D8B25C; }
+
+    .btn-outline { border-color: rgba(255,255,255,.55); color: var(--white); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    .btn-whatsapp { background: var(--whatsapp); color: var(--white); font-size: 1.1rem; padding: 18px 34px; box-shadow: 0 10px 24px rgba(37,211,102,.35); }
+    .btn-whatsapp:hover { background: var(--whatsapp-dark); }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11,31,58,.97);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(201,162,75,.25);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.05rem;
+    }
+    .brand i { color: var(--gold); font-size: 1.3rem; }
+    .brand small { display: block; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: #B8C2D4; }
+    .nav-links { display: none; gap: 28px; }
+    .nav-links a { color: #DCE3EF; font-size: .93rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { padding: 9px 18px; font-size: .88rem; }
+
+    /* Hero */
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(11,31,58,.96) 0%, rgba(18,48,90,.93) 100%),
+        repeating-linear-gradient(45deg, #0B1F3A 0 12px, #0E2646 12px 24px);
+      color: var(--white);
+      padding: 72px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; right: -120px; top: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,162,75,.22), transparent 70%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .eyebrow { color: var(--gold); }
+    .hero h1 { color: var(--white); font-size: clamp(2rem, 8vw, 3.4rem); margin-bottom: 18px; max-width: 760px; }
+    .hero h1 span { color: var(--gold); }
+    .hero p.lead { font-size: 1.08rem; color: #D5DDEB; max-width: 620px; margin-bottom: 30px; }
+    .hero-actions { display: flex; flex-direction: column; gap: 14px; max-width: 420px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 34px; color: #C4CEDF; font-size: .9rem; }
+    .hero-badges i { color: var(--gold); margin-right: 6px; }
+
+    /* Services */
+    .services { background: var(--light); }
+    .grid { display: grid; gap: 22px; grid-template-columns: 1fr; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--gold);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 38px rgba(11,31,58,.16); }
+    .icon-wrap {
+      width: 58px; height: 58px; border-radius: 14px;
+      background: var(--navy); color: var(--gold);
+      display: grid; place-items: center; font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .card > p { color: var(--muted); font-size: .98rem; margin-bottom: 16px; }
+    .card ul { list-style: none; }
+    .card li { display: flex; gap: 10px; padding: 6px 0; font-size: .95rem; }
+    .card li i { color: var(--gold-dark); margin-top: 5px; font-size: .85rem; }
+
+    /* Trust */
+    .trust-grid { display: grid; gap: 28px; grid-template-columns: 1fr; }
+    .trust-item { text-align: center; padding: 10px 14px; }
+    .trust-item .num {
+      width: 72px; height: 72px; margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      color: var(--navy); font-size: 1.7rem;
+      display: grid; place-items: center;
+      background: #FBF6E9;
+    }
+    .trust-item h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .trust-item p { color: var(--muted); font-size: .98rem; }
+
+    /* Process strip */
+    .steps { background: var(--navy); color: var(--white); padding: 52px 0; }
+    .steps h2 { color: var(--white); text-align: center; font-size: clamp(1.5rem, 4.5vw, 2rem); margin-bottom: 30px; }
+    .steps-grid { display: grid; gap: 22px; grid-template-columns: 1fr; counter-reset: step; }
+    .step { display: flex; gap: 16px; align-items: flex-start; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      flex: 0 0 42px; height: 42px; border-radius: 50%;
+      background: var(--gold); color: var(--navy);
+      display: grid; place-items: center; font-weight: 700;
+    }
+    .step h3 { color: var(--white); font-family: 'Inter', sans-serif; font-size: 1.05rem; margin-bottom: 4px; }
+    .step p { color: #BFCADC; font-size: .93rem; }
+
+    /* Contact */
+    .contact { background: var(--light); }
+    .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 40px 24px;
+      text-align: center;
+      max-width: 820px; margin: 0 auto;
+    }
+    .contact-box h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); margin-bottom: 12px; }
+    .contact-box > p { color: var(--muted); max-width: 540px; margin: 0 auto 26px; }
+    .contact-info { display: grid; gap: 14px; margin-top: 30px; text-align: left; }
+    .contact-info div {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px;
+      font-size: .95rem; background: #FBFCFE;
+    }
+    .contact-info i { color: var(--gold-dark); font-size: 1.15rem; width: 22px; text-align: center; }
+    .contact-info strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+
+
+    /* Formulario de solicitud */
+    .request { background: var(--white); }
+    .form-box {
+      max-width: 760px; margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 28px 20px;
+    }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 6px; color: var(--navy); }
+    .field .req { color: #B42318; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 14px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font: inherit; font-size: 1rem;
+      color: var(--text); background: #FBFCFE;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,162,75,.25);
+    }
+    #dynamic-fields { border-top: 1px dashed var(--border); padding-top: 20px; margin-top: 4px; }
+    #dynamic-fields:empty { display: none; }
+    .form-note {
+      background: #FBF6E9; border: 1px solid #EBDDB4; border-radius: 10px;
+      padding: 12px 14px; font-size: .85rem; color: #6B5517; margin-bottom: 20px;
+    }
+    .form-note i { margin-right: 6px; }
+    .form-error { color: #B42318; font-size: .9rem; margin-bottom: 12px; display: none; }
+    .form-box .btn-whatsapp { width: 100%; }
+    .form-box button[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+    @media (min-width: 640px) { .form-box { padding: 40px 44px; } }
+
+    /* Footer */
+    footer { background: #08172C; color: #AEB9CC; padding: 40px 0 28px; font-size: .92rem; }
+    .footer-top { display: grid; gap: 22px; margin-bottom: 26px; }
+    footer .brand { margin-bottom: 8px; }
+    footer a:hover { color: var(--gold); }
+    .footer-contact p { margin-bottom: 6px; }
+    .footer-contact i { color: var(--gold); width: 20px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; font-size: .82rem; text-align: center; }
+
+    /* Floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 100;
+      width: 62px; height: 62px; border-radius: 50%;
+      background: var(--whatsapp); color: var(--white);
+      display: grid; place-items: center; font-size: 2rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,.28);
+      transition: transform .2s ease, background .2s ease;
+      animation: pulse 2.4s infinite;
+    }
+    .wa-float:hover { background: var(--whatsapp-dark); transform: scale(1.08); }
+    .wa-float:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    @keyframes pulse {
+      0%   { box-shadow: 0 8px 22px rgba(0,0,0,.28), 0 0 0 0 rgba(37,211,102,.55); }
+      70%  { box-shadow: 0 8px 22px rgba(0,0,0,.28), 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 8px 22px rgba(0,0,0,.28), 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .wa-float { animation: none; }
+      .btn, .card { transition: none; }
+    }
+
+    /* Tablet */
+    @media (min-width: 640px) {
+      .hero-actions { flex-direction: row; max-width: none; }
+      .contact-info { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Desktop */
+    @media (min-width: 900px) {
+      section { padding: 88px 0; }
+      .nav-links { display: flex; }
+      .hero { padding: 110px 0 120px; }
+      .grid { grid-template-columns: repeat(3, 1fr); }
+      .trust-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-top { grid-template-columns: 1.4fr 1fr; align-items: start; }
+      .contact-box { padding: 56px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Inicio">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <span>Lic. Gabriela Ángeles<small>Gestoría y Asesoría Legal</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#solicitud">Solicitar trámite</a>
+        <a href="#confianza">Por qué elegirme</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-gold nav-cta" href="https://wa.me/525580370994?text=Hola%2C%20quisiera%20una%20consulta%20sobre%20un%20tr%C3%A1mite." target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Consultar
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <span class="eyebrow">Gestoría Administrativa, Fiscal y Legal</span>
+        <h1>Trámites y Gestoría Legal <span>sin Complicaciones</span></h1>
+        <p class="lead">Facilito tus trámites ante el SAT y dependencias de gobierno para que tú te dediques a lo que realmente importa: tu negocio, tu trabajo y tu familia. Yo me encargo del papeleo, las filas y los requisitos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="https://wa.me/525580370994?text=Hola%2C%20quisiera%20una%20consulta%20sobre%20un%20tr%C3%A1mite." target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Consultar ahora
+          </a>
+          <a class="btn btn-outline" href="#servicios">
+            Ver servicios <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+        <div class="hero-badges">
+          <span><i class="fa-solid fa-circle-check"></i>Orientación clara desde el primer mensaje</span>
+          <span><i class="fa-solid fa-circle-check"></i>Atención por WhatsApp</span>
+          <span><i class="fa-solid fa-circle-check"></i>Servicio en todo México*</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Servicios</span>
+          <h2>Soluciones legales y administrativas a tu medida</h2>
+          <p>Desde tu primer trámite hasta la regularización de tu situación fiscal, te acompaño en cada paso con claridad y profesionalismo.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <h3>Trámites del SAT</h3>
+            <p>Mantener tu situación fiscal en orden te evita multas y dolores de cabeza. Realizo tus gestiones ante el SAT de forma correcta y a tiempo.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Inscripción al RFC (personas físicas y morales)</li>
+              <li><i class="fa-solid fa-check"></i>Constancia de Situación Fiscal</li>
+              <li><i class="fa-solid fa-check"></i>Tramitación y renovación de e.firma</li>
+              <li><i class="fa-solid fa-check"></i>Actualización de datos y obligaciones fiscales</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
+            <h3>Gestoría Legal y Administrativa</h3>
+            <p>Olvídate de las filas, las ventanillas y los requisitos que cambian. Me encargo de tramitar por ti ante las dependencias correspondientes.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Permisos y licencias de funcionamiento</li>
+              <li><i class="fa-solid fa-check"></i>Trámites notariales y seguimiento de escrituras</li>
+              <li><i class="fa-solid fa-check"></i>Altas, bajas y avisos ante dependencias</li>
+              <li><i class="fa-solid fa-check"></i>Integración y revisión de documentación</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-gavel"></i></div>
+            <h3>Asesoría Jurídica</h3>
+            <p>Antes de firmar o tomar una decisión importante, conoce tus derechos y obligaciones. Te oriento con lenguaje claro, sin tecnicismos innecesarios.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Consulta y orientación legal personalizada</li>
+              <li><i class="fa-solid fa-check"></i>Revisión de contratos y documentos</li>
+              <li><i class="fa-solid fa-check"></i>Asesoría para emprendedores y negocios</li>
+              <li><i class="fa-solid fa-check"></i>Estrategia ante requerimientos y notificaciones</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section id="confianza">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">¿Por qué elegirme?</span>
+          <h2>Tu tranquilidad es parte del servicio</h2>
+          <p>Un trámite mal hecho puede costar tiempo y dinero. Por eso trabajo con orden, claridad y compromiso.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="num"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Rapidez</h3>
+            <p>Respondo tus mensajes con prontitud y doy seguimiento puntual a cada gestión, para que tus trámites avancen sin retrasos innecesarios.</p>
+          </div>
+          <div class="trust-item">
+            <div class="num"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Transparencia Legal</h3>
+            <p>Te explico qué se necesita, cuánto cuesta y cuánto tiempo puede tomar, antes de empezar. Sin sorpresas y sin letras chiquitas.</p>
+          </div>
+          <div class="trust-item">
+            <div class="num"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3>Trato Personalizado</h3>
+            <p>Cada caso es distinto. Te atiendo directamente, entiendo tu situación y te propongo la mejor solución para ti, no una receta genérica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="steps" id="proceso">
+      <div class="container">
+        <h2>Así de sencillo es trabajar conmigo</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <div>
+              <h3>Escríbeme</h3>
+              <p>Cuéntame por WhatsApp qué trámite necesitas.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Revisamos tu caso</h3>
+              <p>Te indico requisitos, costos y tiempos estimados.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Yo me encargo</h3>
+              <p>Realizo las gestiones y te mantengo informado.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Recibe tu resultado</h3>
+              <p>Te entrego tu documentación lista y en orden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLICITUD DE TRÁMITE -->
+    <section class="request" id="solicitud">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Solicita tu trámite</span>
+          <h2>Cuéntame qué necesitas en 1 minuto</h2>
+          <p>Elige el tipo de trámite, llena los datos y se abrirá WhatsApp con tu mensaje listo para enviar. Así puedo darte una respuesta más rápida y precisa.</p>
+          <div class="divider"></div>
+        </div>
+
+        <form class="form-box" id="request-form" novalidate>
+          <div class="form-note">
+            <i class="fa-solid fa-lock"></i>
+            Por tu seguridad, <strong>no escribas aquí contraseñas ni claves</strong> (SAT, e.firma, bancos). Si hace falta algún documento, te lo pediré directamente por WhatsApp.
+          </div>
+
+          <div class="field">
+            <label for="tipo">¿Qué trámite necesitas? <span class="req">*</span></label>
+            <select id="tipo" required>
+              <option value="">Selecciona una opción…</option>
+              <option value="rfc">Inscripción al RFC</option>
+              <option value="constancia">Constancia de Situación Fiscal</option>
+              <option value="efirma">e.firma (tramitación o renovación)</option>
+              <option value="actualizacion">Actualización de datos fiscales</option>
+              <option value="permisos">Permisos y licencias</option>
+              <option value="notarial">Trámite notarial</option>
+              <option value="asesoria">Asesoría jurídica</option>
+              <option value="otro">Otro trámite</option>
+            </select>
+          </div>
+
+          <div id="dynamic-fields" aria-live="polite"></div>
+
+          <p class="form-error" id="form-error" role="alert">Por favor completa los campos marcados con * para continuar.</p>
+
+          <button type="submit" class="btn btn-whatsapp" id="send-btn" disabled>
+            <i class="fa-brands fa-whatsapp"></i> Enviar solicitud por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact-box">
+          <span class="eyebrow">Contacto</span>
+          <h2>¿Tienes un trámite pendiente? Hablemos hoy</h2>
+          <p>Escríbeme por WhatsApp y cuéntame tu caso. La primera orientación es el mejor punto de partida para resolverlo sin complicaciones.</p>
+
+          <a class="btn btn-whatsapp" href="https://wa.me/525580370994?text=Hola%2C%20quisiera%20una%20consulta%20sobre%20un%20tr%C3%A1mite." target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
+          </a>
+
+          <div class="contact-info">
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <span><strong>Teléfono / WhatsApp</strong>55 8037 0994</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-envelope"></i>
+              <span><strong>Correo</strong>contacto@tudominio.com</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-clock"></i>
+              <span><strong>Horario de atención</strong>Lunes a viernes, 8:00 a 16:00 h</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <span><strong>Ubicación</strong>Ciudad de México, México</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#inicio" class="brand">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Lic. Gabriela Ángeles</span>
+          </a>
+          <p>Gestoría administrativa, fiscal y legal. Trámites claros, atención directa y resultados en orden.</p>
+        </div>
+        <div class="footer-contact">
+          <p><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/525580370994" target="_blank" rel="noopener">55 8037 0994</a></p>
+          <p><i class="fa-solid fa-envelope"></i>contacto@tudominio.com</p>
+          <p><i class="fa-solid fa-location-dot"></i>Ciudad de México, México</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Lic. Gabriela Ángeles. Todos los derechos reservados.</p>
+        <p style="margin-top:6px;">*Algunos trámites pueden requerir presencia o gestión local según la dependencia. La información de este sitio es de carácter general y no sustituye una asesoría legal personalizada.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/525580370994?text=Hola%2C%20quisiera%20una%20consulta%20sobre%20un%20tr%C3%A1mite." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Formulario de solicitud por WhatsApp =====
+    var WA_NUMBER = '525580370994';
+    var YES_NO = ['Sí', 'No'];
+
+    var TRAMITES = {
+      rfc: {
+        label: 'Inscripción al RFC',
+        fields: [
+          { id: 'persona', label: 'Tipo de contribuyente', type: 'select', options: ['Persona física', 'Persona moral (empresa)'], required: true },
+          { id: 'actividad', label: 'Actividad o giro', type: 'text', placeholder: 'Ej. venta de ropa, servicios profesionales…', required: true },
+          { id: 'curp', label: '¿Cuentas con tu CURP?', type: 'select', options: YES_NO, required: true },
+          { id: 'correo', label: 'Correo electrónico', type: 'email', placeholder: 'tucorreo@ejemplo.com' }
+        ]
+      },
+      constancia: {
+        label: 'Constancia de Situación Fiscal',
+        fields: [
+          { id: 'tienerfc', label: '¿Ya tienes RFC?', type: 'select', options: YES_NO, required: true },
+          { id: 'rfc', label: 'RFC (si lo tienes)', type: 'text', placeholder: '12 o 13 caracteres' },
+          { id: 'uso', label: '¿Para qué la necesitas?', type: 'text', placeholder: 'Ej. banco, empleo, facturar…' },
+          { id: 'correo', label: 'Correo electrónico', type: 'email', placeholder: 'tucorreo@ejemplo.com' }
+        ]
+      },
+      efirma: {
+        label: 'e.firma',
+        fields: [
+          { id: 'accion', label: '¿Qué necesitas?', type: 'select', options: ['Tramitarla por primera vez', 'Renovarla (está vencida o por vencer)', 'No estoy seguro(a)'], required: true },
+          { id: 'rfc', label: 'RFC', type: 'text', placeholder: '12 o 13 caracteres', required: true },
+          { id: 'correo', label: 'Correo electrónico', type: 'email', placeholder: 'tucorreo@ejemplo.com' }
+        ]
+      },
+      actualizacion: {
+        label: 'Actualización de datos fiscales',
+        fields: [
+          { id: 'rfc', label: 'RFC', type: 'text', placeholder: '12 o 13 caracteres', required: true },
+          { id: 'cambio', label: '¿Qué necesitas actualizar?', type: 'select', options: ['Domicilio fiscal', 'Actividad económica', 'Régimen fiscal', 'Obligaciones fiscales', 'Otro / varios'], required: true },
+          { id: 'detalle', label: 'Cuéntame más', type: 'textarea', placeholder: 'Describe brevemente el cambio que necesitas.' }
+        ]
+      },
+      permisos: {
+        label: 'Permisos y licencias',
+        fields: [
+          { id: 'permiso', label: 'Tipo de permiso o licencia', type: 'text', placeholder: 'Ej. licencia de funcionamiento, uso de suelo…', required: true },
+          { id: 'giro', label: 'Giro del negocio', type: 'text', placeholder: 'Ej. restaurante, estética, tienda…', required: true },
+          { id: 'ubicacion', label: 'Alcaldía o municipio y estado', type: 'text', placeholder: 'Ej. Iztacalco, CDMX', required: true },
+          { id: 'opera', label: '¿El negocio ya está operando?', type: 'select', options: YES_NO }
+        ]
+      },
+      notarial: {
+        label: 'Trámite notarial',
+        fields: [
+          { id: 'notarial', label: 'Tipo de trámite', type: 'select', options: ['Compraventa de inmueble', 'Testamento', 'Poder notarial', 'Constitución de sociedad', 'Seguimiento de escrituras', 'Otro'], required: true },
+          { id: 'ubicacion', label: 'Ciudad y estado donde se realizará', type: 'text', placeholder: 'Ej. Ciudad de México', required: true },
+          { id: 'etapa', label: 'Etapa actual', type: 'text', placeholder: 'Ej. apenas voy a iniciar, ya tengo notaría…' }
+        ]
+      },
+      asesoria: {
+        label: 'Asesoría jurídica',
+        fields: [
+          { id: 'tema', label: 'Tema de la consulta', type: 'select', options: ['Contratos', 'Fiscal', 'Laboral', 'Mercantil / negocios', 'Familiar', 'Inmobiliario', 'Otro'], required: true },
+          { id: 'situacion', label: 'Describe brevemente tu situación', type: 'textarea', placeholder: 'No necesitas dar todos los detalles; con lo esencial es suficiente.', required: true },
+          { id: 'urgencia', label: '¿Qué tan urgente es?', type: 'select', options: ['Normal', 'Urgente (esta semana)'] }
+        ]
+      },
+      otro: {
+        label: 'Otro trámite',
+        fields: [
+          { id: 'descripcion', label: 'Describe el trámite que necesitas', type: 'textarea', placeholder: '¿Qué dependencia o gestión es? ¿Qué necesitas lograr?', required: true }
+        ]
+      }
+    };
+
+    var form = document.getElementById('request-form');
+    var selectTipo = document.getElementById('tipo');
+    var dynamic = document.getElementById('dynamic-fields');
+    var sendBtn = document.getElementById('send-btn');
+    var errorBox = document.getElementById('form-error');
+
+    function fieldHTML(f) {
+      var req = f.required ? ' <span class="req">*</span>' : '';
+      var id = 'f_' + f.id;
+      var control;
+      if (f.type === 'select') {
+        control = '<select id="' + id + '"' + (f.required ? ' required' : '') + '><option value="">Selecciona…</option>' +
+          f.options.map(function (o) { return '<option>' + o + '</option>'; }).join('') + '</select>';
+      } else if (f.type === 'textarea') {
+        control = '<textarea id="' + id + '" placeholder="' + (f.placeholder || '') + '"' + (f.required ? ' required' : '') + '></textarea>';
+      } else {
+        control = '<input id="' + id + '" type="' + f.type + '" placeholder="' + (f.placeholder || '') + '"' + (f.required ? ' required' : '') + '>';
+      }
+      return '<div class="field"><label for="' + id + '">' + f.label + req + '</label>' + control + '</div>';
+    }
+
+    function commonFields() {
+      return [
+        { id: 'nombre', label: 'Tu nombre completo', type: 'text', placeholder: 'Nombre y apellidos', required: true },
+        { id: 'telefono', label: 'Tu teléfono (si es distinto a este WhatsApp)', type: 'tel', placeholder: '10 dígitos' }
+      ];
+    }
+
+    function allFields(key) {
+      return commonFields().concat(TRAMITES[key].fields);
+    }
+
+    selectTipo.addEventListener('change', function () {
+      var key = selectTipo.value;
+      errorBox.style.display = 'none';
+      if (!key) {
+        dynamic.innerHTML = '';
+        sendBtn.disabled = true;
+        return;
+      }
+      dynamic.innerHTML = allFields(key).map(fieldHTML).join('');
+      sendBtn.disabled = false;
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var key = selectTipo.value;
+      if (!key) return;
+
+      var fields = allFields(key);
+      var lines = [];
+      var missing = false;
+
+      fields.forEach(function (f) {
+        var el = document.getElementById('f_' + f.id);
+        var val = (el.value || '').trim();
+        el.style.borderColor = '';
+        if (f.required && !val) {
+          el.style.borderColor = '#B42318';
+          missing = true;
+        }
+        if (val) lines.push('*' + f.label.replace(/\s*\(.*\)$/, '') + ':* ' + val);
+      });
+
+      if (missing) {
+        errorBox.style.display = 'block';
+        return;
+      }
+      errorBox.style.display = 'none';
+
+      var text = 'Hola, Lic. Gabriela. Quiero solicitar un trámite desde su página web.\n\n' +
+                 '*Trámite:* ' + TRAMITES[key].label + '\n' +
+                 lines.join('\n') +
+                 '\n\nQuedo al pendiente. ¡Gracias!';
+
+      var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+      var win = window.open(url, '_blank', 'noopener');
+      if (!win) window.location.href = url;
+    });
+  </script>
+</body>
+</html>
